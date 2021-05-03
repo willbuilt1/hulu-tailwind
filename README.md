@@ -1,34 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Hulu type app created using the latest in front-end tech:
 
-## Getting Started
+- React
+- Next.js
+- Tailwind.css with JIT compiler
+- Heroicons
 
-First, run the development server:
+Have a look here: https://hulu-tailwind.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Thoughts on Tailwind
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is my first time using Tailwind and I have to say that I am impressed. Whilst the sheer numbers of classes seemed ridiculous at first with a simple extension for VS Code ([Tailwind CSS IntelliSense - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) it made the experience a breeze.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The idea of “Atomic” utility type CSS has been my general M.O for some time where possible, however this can be quite difficult to implement when collaborating with developers as everyone has preferred methods or naming conventions. Also when working on smaller side projects it does feel like quite a rigmarole to set up which can push towards more component based frameworks such as Bulma or Bootstrap. Whilst completely functional does remove some of the fun of crafting your own components.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This for me is Tailwind’s greatest strength as it allows quick styling whilst not leaving the DOM. There are some clear downsides such as extremely messy HTML and less control of global styling with the quick change of a variable. That said I feel that there may be some tricks that I am not aware of as only scratched the surface. All in all I think when thinking in reusable component terms as you do in React I feel that Tailwind is a fantastic tool to speed up development process as it keeps you thinking in CSS whilst not needing to leave the JSX.
