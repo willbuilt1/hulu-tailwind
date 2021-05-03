@@ -1,8 +1,11 @@
+# Next.js movie site
+
 This is a Hulu type app created using the latest in front-end tech:
 
 - React
 - Next.js
 - Tailwind.css with JIT compiler
+- TMDB API
 - Heroicons
 
 Have a look here: https://hulu-tailwind.vercel.app/
