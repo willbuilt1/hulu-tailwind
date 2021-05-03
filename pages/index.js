@@ -6,7 +6,6 @@ import requests from '../utils/requests';
 
 //destruture object with a different variable name
 const Home = ({ results: movies }) => {
-  console.log(movies);
   return (
     <div>
       <Head>
@@ -18,7 +17,7 @@ const Home = ({ results: movies }) => {
       <Header />
       {/* Nav */}
       <Genres />
-      <Results />
+      <Results results={movies} />
     </div>
   );
 };
