@@ -1,11 +1,20 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import Genres from '../components/Genres';
 import Header from '../components/Header';
+import Modal from '../components/Modal';
 import Results from '../components/Results';
 import requests from '../utils/requests';
 
 //destruture object with a different variable name
+
 const Home = ({ results: movies }) => {
+  const [selectedMovie, setSelectedMovie] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const modal = (result) => {
+    setSelectedMovie(result);
+    setShowModal(true);
+  };
   return (
     <div>
       <Head>
@@ -14,10 +23,11 @@ const Home = ({ results: movies }) => {
       </Head>
 
       {/* Header */}
+      {showModal ? <Modal result={selectedMovie} /> : null}
       <Header />
       {/* Nav */}
       <Genres />
-      <Results results={movies} />
+      <Results results={movies} setMovie={modal} />
     </div>
   );
 };

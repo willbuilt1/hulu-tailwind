@@ -1,10 +1,13 @@
 import { ThumbUpIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 
-const Thumbnail = ({ result }) => {
+const Thumbnail = ({ result, setMovie }) => {
   const baseUrl = 'https://image.tmdb.org/t/p/original/';
   return (
-    <div className="p-2 group cursor-pointer transition duration-200 transform sm:hover:scale-105">
+    <div
+      className="p-2 group cursor-pointer transition duration-200 transform sm:hover:scale-105"
+      onClick={() => setMovie(result)}
+    >
       <Image
         src={`${baseUrl}${result.backdrop_path || result.poster_path}`}
         layout="responsive"
