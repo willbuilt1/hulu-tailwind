@@ -19,7 +19,7 @@ const Home = ({ results: movies }) => {
     <div>
       <Head>
         <title>Hulu app</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       {/* Header */}
@@ -41,10 +41,50 @@ export async function getServerSideProps(context) {
     `https://api.themoviedb.org/3${
       requests[genre]?.url || requests.fetchTrending.url
     }`
-  ).then((res) => res.json());
+  );
+
+  try {
+    if (!request.ok) {
+      throw new Error(`HTTP error! status: ${request.status}`);
+    }
+  } catch (err) {
+    return {
+      notFound: true,
+    };
+  }
+
+  let data = await request.json();
+
   return {
     props: {
-      results: request.results,
+      results: data.results,
     }, // will be passed to the page component as props
   };
 }
+
+// export async function getServerSideProps(context) {
+//   const genre = context.query.genre;
+
+//   const request = await fetch(
+//     `https://api.themoviedb.org/3${
+//       requests[genre]?.url || requests.fetchTrending.url
+//     }`
+//   ).then((res) => {
+//     if (!res.success) {
+//       return null;
+//     } else {
+//       return res.json();
+//     }
+//   });
+
+//   if (!request) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+//   return {
+//     props: {
+//       results: request.results,
+//     }, // will be passed to the page component as props
+//   };
+// }
