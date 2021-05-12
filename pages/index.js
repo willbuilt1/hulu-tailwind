@@ -11,10 +11,19 @@ import requests from '../utils/requests';
 const Home = ({ results: movies }) => {
   const [selectedMovie, setSelectedMovie] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const modal = (result) => {
+  // const modal = (result) => {
+  //   setSelectedMovie(result);
+  //   setShowModal(true);
+  // };
+  const setMovie = (result) => {
     setSelectedMovie(result);
     setShowModal(true);
   };
+  const toggleModal = (result) => {
+    setSelectedMovie(null);
+    setShowModal(false);
+  };
+
   return (
     <div>
       <Head>
@@ -23,11 +32,13 @@ const Home = ({ results: movies }) => {
       </Head>
 
       {/* Header */}
-      {showModal ? <Modal result={selectedMovie} /> : null}
+      {showModal ? (
+        <Modal result={selectedMovie} hideModal={toggleModal} />
+      ) : null}
       <Header />
       {/* Nav */}
       <Genres />
-      <Results results={movies} setMovie={modal} />
+      <Results results={movies} setMovie={setMovie} toggleModal={toggleModal} />
     </div>
   );
 };
