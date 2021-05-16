@@ -6,8 +6,8 @@ import {
 } from '@heroicons/react/outline';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import HeaderItem from './HeaderItem';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
@@ -20,6 +20,7 @@ const Header = () => {
           link="?genre=fetchTrending"
         />
         <HeaderItem title="Search" Icon={SearchIcon} />
+        <SearchBar />
         <HeaderItem title="account" Icon={UserIcon} />
       </nav>
       <Image
