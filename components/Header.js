@@ -1,7 +1,5 @@
 import {
   HomeIcon,
-  BadgeCheckIcon,
-  CollectionIcon,
   LightningBoltIcon,
   SearchIcon,
   UserIcon,
@@ -15,10 +13,12 @@ const Header = () => {
   return (
     <header className="flex flex-col items-center sm:flex-row sm:justify-between m-2 sm:mr-4">
       <nav className="flex flex-grow justify-evenly max-w-2xl sm:mt-3">
-        <HeaderItem title="Home" Icon={HomeIcon} />
-        <HeaderItem title="Trending" Icon={LightningBoltIcon} />
-        <HeaderItem title="Verified" Icon={BadgeCheckIcon} />
-        <HeaderItem title="Collections" Icon={CollectionIcon} />
+        <HeaderItem title="Home" Icon={HomeIcon} link="" />
+        <HeaderItem
+          title="Trending"
+          Icon={LightningBoltIcon}
+          link="?genre=fetchTrending"
+        />
         <HeaderItem title="Search" Icon={SearchIcon} />
         <HeaderItem title="account" Icon={UserIcon} />
       </nav>
